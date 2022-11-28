@@ -1,0 +1,50 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+    <ApplicationIcon>Resources\Os.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\BankerAlgorithm.png" />
+    <None Remove="Resources\close.png" />
+    <None Remove="Resources\FileManagement.png" />
+    <None Remove="Resources\Fonts\HaiPaiQiangDiaoSenXiYuan-Shan%28ShanghaiFace-SenGBT-Flash%29-2.ttf" />
+    <None Remove="Resources\Fonts\ZhongYingLiHeTieShanYingBiXingKai-1.ttf" />
+    <None Remove="Resources\max.png" />
+    <None Remove="Resources\min.png" />
+    <None Remove="Resources\normal.png" />
+    <None Remove="Resources\Os.png" />
+    <None Remove="Resources\ProcessScheduling.png" />
+    <None Remove="Resources\StorageManagement.png" />
+    <None Remove="Resources\TaskScheduling.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Resources\Os.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.0.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="7.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\BankerAlgorithm.png" />
+    <Resource Include="Resources\close.png" />
+    <Resource Include="Resources\FileManagement.png" />
+    <Resource Include="Resources\Fonts\HaiPaiQiangDiaoSenXiYuan-Shan(ShanghaiFace-SenGBT-Flash)-2.ttf" />
+    <Resource Include="Resources\Fonts\ZhongYingLiHeTieShanYingBiXingKai-1.ttf" />
+    <Resource Include="Resources\max.png" />
+    <Resource Include="Resources\min.png" />
+    <Resource Include="Resources\normal.png" />
+    <Resource Include="Resources\Os.png" />
+    <Resource Include="Resources\ProcessScheduling.png" />
+    <Resource Include="Resources\StorageManagement.png" />
+    <Resource Include="Resources\TaskScheduling.png" />
+  </ItemGroup>
+
+</Project>
