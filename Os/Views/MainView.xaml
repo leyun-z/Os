@@ -171,66 +171,84 @@
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
-            <!--  左侧菜单列表，负责切换  -->
-            <ListBox
-                x:Name="MenuList"
-                Grid.Column="0"
-                BorderThickness="0"
-                ItemContainerStyle="{StaticResource MenuItemStyle}"
-                ItemsSource="{Binding Menus}"
-                ScrollViewer.HorizontalScrollBarVisibility="Hidden"
-                ScrollViewer.VerticalScrollBarVisibility="Hidden"
-                SelectedIndex="0">
+            <DockPanel Grid.Column="0">
 
-                <ListBox.ItemTemplate>
+                <!--  左侧菜单列表，负责切换  -->
+                <ListBox
+                    x:Name="MenuList"
+                    Grid.Column="0"
+                    Width="248"
+                    BorderThickness="0"
+                    DockPanel.Dock="Top"
+                    ItemContainerStyle="{StaticResource MenuItemStyle}"
+                    ItemsSource="{Binding Menus}"
+                    ScrollViewer.HorizontalScrollBarVisibility="Hidden"
+                    ScrollViewer.VerticalScrollBarVisibility="Hidden"
+                    SelectedIndex="0">
 
-                    <DataTemplate>
-                        <StackPanel
-                            Width="200"
-                            Height="40"
-                            Margin="4"
-                            Orientation="Horizontal">
-                            <Image
-                                Width="40"
-                                Height="auto"
-                                Margin="16,8,-8,8"
-                                RenderOptions.BitmapScalingMode="HighQuality"
-                                Source="{Binding Icon}" />
-                            <TextBlock
-                                HorizontalAlignment="Center"
-                                VerticalAlignment="Center"
-                                Text="{Binding Detail}">
-                                <TextBlock.Style>
+                    <ListBox.ItemTemplate>
 
-                                    <!--  标题栏内文字的样式  -->
-                                    <Style TargetType="TextBlock">
-                                        <Setter Property="Padding" Value="8" />
-                                        <Setter Property="Margin" Value="16,0" />
-                                        <Setter Property="FontSize" Value="20" />
-                                        <Setter Property="Foreground" Value="{StaticResource ColorTextBackground}" />
-                                    </Style>
+                        <DataTemplate>
+                            <StackPanel
+                                Width="200"
+                                Height="40"
+                                Margin="4"
+                                Orientation="Horizontal">
+                                <Image
+                                    Width="40"
+                                    Height="auto"
+                                    Margin="16,8,-8,8"
+                                    RenderOptions.BitmapScalingMode="HighQuality"
+                                    Source="{Binding Icon}" />
+                                <TextBlock
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"
+                                    Text="{Binding Detail}">
+                                    <TextBlock.Style>
 
-                                </TextBlock.Style>
-                            </TextBlock>
-                        </StackPanel>
-                    </DataTemplate>
+                                        <!--  标题栏内文字的样式  -->
+                                        <Style TargetType="TextBlock">
+                                            <Setter Property="Padding" Value="8" />
+                                            <Setter Property="Margin" Value="16,0" />
+                                            <Setter Property="FontSize" Value="20" />
+                                            <Setter Property="Foreground" Value="{StaticResource ColorTextBackground}" />
+                                        </Style>
 
-                </ListBox.ItemTemplate>
+                                    </TextBlock.Style>
+                                </TextBlock>
+                            </StackPanel>
+                        </DataTemplate>
 
-                <ListBox.ItemsPanel>
-                    <ItemsPanelTemplate>
-                        <StackPanel Orientation="Vertical" />
-                    </ItemsPanelTemplate>
-                </ListBox.ItemsPanel>
+                    </ListBox.ItemTemplate>
 
-            </ListBox>
+                    <ListBox.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <StackPanel Orientation="Vertical" />
+                        </ItemsPanelTemplate>
+                    </ListBox.ItemsPanel>
 
-            <!--  显示内容  -->
-            <Frame
+                </ListBox>
+
+            </DockPanel>
+
+            <Border
                 Grid.Column="1"
-                NavigationUIVisibility="Hidden"
-                Source="{Binding Path=SelectedItem.Content, ElementName=MenuList}" />
+                Margin="4"
+                Background="{StaticResource ColorNormal}"
+                CornerRadius="8">
+                <Border.Effect>
+                    <DropShadowEffect
+                        BlurRadius="8"
+                        ShadowDepth="0"
+                        Color="#51B6F4" />
+                </Border.Effect>
 
+                <!--  显示内容  -->
+                <Frame
+                    Margin="16"
+                    NavigationUIVisibility="Hidden"
+                    Source="{Binding Path=SelectedItem.Content, ElementName=MenuList}" />
+            </Border>
         </Grid>
     </Grid>
 

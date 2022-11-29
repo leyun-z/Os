@@ -18,13 +18,17 @@ public partial class MainViewModel : ObservableObject
 	private ObservableCollection<Menu> _menus = new();
 
 	[ObservableProperty]
-	private Student _student = new Student()
+	private Student _student = new()
 	{
-		Name = "张文俊",
-		Sno = "1033200319",
-		Class = "计科2003班"
+		//Name = "张文俊",
+		//Sno = "1033200319",
+		//Class = "计科2003班"
 	};
 
+
+	/// <summary>
+	/// 初始化菜单栏按钮
+	/// </summary>
 	private void InitializeMenus()
 	{
 		_menus.Add(new Menu()
